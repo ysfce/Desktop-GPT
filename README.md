@@ -10,3 +10,5 @@ To install libraries:
 Simply run desktop_gpt.py with python:
 
 ```python3 desktop_gpt.py```
+
+Note: You may need to install another version of chromedriver due to your chrome version. Here are the versions: [https://chromedriver.chromium.org/downloads]

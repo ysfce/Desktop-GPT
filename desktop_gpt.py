@@ -1,4 +1,4 @@
-from undetected_chromedriver import Chrome
+from undetected_chromedriver import Chrome, ChromeOptions
 from time import sleep
 import os
 import sys
@@ -6,10 +6,13 @@ import sys
 email = "email"
 password = "password"
 
-chrome = Chrome()
+options = ChromeOptions()
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
+chrome = Chrome(options=options)
 
 chrome.get("https://chat.openai.com/")
-chrome.maximize_window()
+
 chrome.find_element_by_xpath("/html/body/div[1]/div[1]/div[1]/div[4]/button[1]").click()
 sleep(3)
 chrome.find_element_by_xpath("/html/body/div/main/section/div/div/div/div[1]/div/form/div[1]/div/div/div/input").send_keys(email)
